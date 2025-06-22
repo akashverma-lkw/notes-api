@@ -2,10 +2,6 @@
 import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
-/**
- * @desc Register a new user
- * @route POST /auth/register
- */
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -29,10 +25,6 @@ export const registerUser = async (req, res) => {
   }
 };
 
-/**
- * @desc Login user and return JWT
- * @route POST /auth/login
- */
 export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;

@@ -1,10 +1,6 @@
 // controllers/noteController.js
 import Note from '../models/Note.js';
 
-/**
- * @desc Create a new note (logged-in user only)
- * @route POST /notes
- */
 export const createNote = async (req, res) => {
   try {
     const { title, content } = req.body;
@@ -21,10 +17,6 @@ export const createNote = async (req, res) => {
   }
 };
 
-/**
- * @desc Get all notes of the logged-in user
- * @route GET /notes
- */
 export const getNotes = async (req, res) => {
   try {
     const notes = await Note.find({ userId: req.user.id }).sort({ createdAt: -1 });
